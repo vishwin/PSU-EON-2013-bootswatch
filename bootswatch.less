@@ -1,0 +1,247 @@
+// EON 2.3.2
+// Bootswatch
+// -----------------------------------------------------
+
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic|Ubuntu+Mono:400,700,400italic,700italic|Roboto:400,700,400italic,700italic|Roboto+Condensed:300,400,700,300italic,400italic,700italic|Noto+Serif:400,700,400italic,700italic);
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+// SCAFFOLDING
+// -----------------------------------------------------
+html, body {
+	height: 100%;
+}
+
+.main {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -95px;
+}
+
+.push {
+	height: 95px;
+}
+footer {
+	margin-top: 5px;
+	padding-top: 10px;
+	background-color: @footerBackground;
+	.box-shadow(0 20px 15px -15px @footerBackgroundGradient inset);
+	font-family: @footerFontFamily;
+	color: @footerText;
+	a {
+		color: @footerLinkColor;
+		&:hover {
+			color: @footerLinkColorHover;
+			text-decoration: none;
+			border-bottom: 1px dotted;
+		}
+	}
+	.logo > a:hover {
+		border-bottom: 0;
+	}
+	.social {
+		font-size: 1.25em;
+	}
+}
+
+// NAVBAR
+// -----------------------------------------------------
+.navbar {
+	font-family: @navbarFontFamily;
+	font-size: (@navbarHeight - @baseLineHeight * 2);
+	font-weight: 300;
+	.brand {
+		padding: ((@navbarHeight - @baseLineHeight) / 4) 12px;
+		font-size: (@navbarHeight - @baseLineHeight);
+		img {
+			padding: 0;
+			margin: 0;
+		}
+		text-shadow: none;
+	}
+	.nav {
+		li > a {
+			padding: @baseLineHeight 10px (@baseLineHeight - 5);
+			border-bottom: 5px solid transparent;
+		}
+		.active > a,
+		.active > a:hover,
+		.active > a:focus {
+			background-color: transparent;
+			.box-shadow(none);
+			border-bottom: 5px solid @navbarLinkColorActive;
+		}
+		li.dropdown > .dropdown-menu > li > a {
+			padding: 3px 10px;
+			font-size: @baseFontSize;
+			font-weight: 300;
+			border: 0;
+		}
+	}
+}
+
+// NAV
+// -----------------------------------------------------
+.nav > li > a:hover,
+.nav > li > a:focus {
+	background-color: lighten(@linkColor, 55%);
+}
+
+.nav-list > li > a:hover,
+.nav-list > li > a:focus {
+	background-color: @grayLighter;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+	border-color: lighten(@linkColor, 55%) lighten(@linkColor, 55%) #DDDDDD;
+}
+
+.nav-tabs.nav-stacked > .active > a,
+.nav-tabs.nav-stacked > .active > a:hover,
+.nav-tabs.nav-stacked > .active > a:focus {
+	color: @white;
+	background-color: @linkColor;
+	border-color: @linkColor;
+}
+
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover,
+.nav > li.dropdown.open.active > a:focus {
+	background-color: @linkColor;
+	border-color: @linkColor;
+}
+
+// BUTTONS
+// -----------------------------------------------------
+.btn {
+	background-image: none;
+	.box-shadow(none);
+	text-shadow: none;
+	border: 1px solid @btnBorder;
+	
+	&.active,
+	&:active {
+		.box-shadow(none);
+		background-color: darken(@btnBackgroundHighlight, 15%);
+	}
+}
+
+.btn-primary {
+	border-color: darken(@btnPrimaryBackgroundHighlight, 15%);
+	&.active,
+	&:active {
+		background-color: darken(@btnPrimaryBackgroundHighlight, 15%);
+	}
+}
+.btn-info {
+	border-color: darken(@btnInfoBackgroundHighlight, 15%);
+	&.active,
+	&:active {
+		background-color: darken(@btnInfoBackgroundHighlight, 15%);
+	}
+}
+.btn-success {
+	border-color: darken(@btnSuccessBackgroundHighlight, 15%);
+	&.active,
+	&:active {
+		background-color: darken(@btnSuccessBackgroundHighlight, 15%);
+	}
+}
+.btn-warning {
+	border-color: darken(@btnWarningBackgroundHighlight, 15%);
+	&.active,
+	&:active {
+		background-color: darken(@btnWarningBackgroundHighlight, 15%);
+	}
+}
+.btn-danger {
+	border-color: darken(@btnDangerBackgroundHighlight, 15%);
+	&.active,
+	&:active {
+		background-color: darken(@btnDangerBackgroundHighlight, 15%);
+	}
+}
+.btn-inverse {
+	border-color: lighten(@btnInverseBackground, 15%);
+	&.active,
+	&:active {
+		background-color: lighten(@btnInverseBackground, 15%);
+	}
+}
+
+.btn-link {
+	.box-sizing(border-box);
+	border: 3px solid lighten(@linkColor, 35%);
+	&:hover,
+	&:focus {
+		color: @linkColorHover;
+		text-decoration: none;
+		border-color: @linkColorHover;
+	}
+	&:active,
+	&[disabled] {
+		background-color: transparent;
+	}
+}
+
+.btn-group > .btn + .dropdown-toggle {
+	.box-shadow(none);
+}
+.btn-group.open {
+	.dropdown-toggle {
+		.box-shadow(none);
+	}
+	.btn.dropdown-toggle {
+		background-color: darken(@btnBackgroundHighlight, 15%);
+	}
+	.btn-primary.dropdown-toggle {
+		background-color: darken(@btnPrimaryBackgroundHighlight, 15%);
+	}
+	.btn-danger.dropdown-toggle {
+		background-color: darken(@btnDangerBackgroundHighlight, 15%);
+	}
+	.btn-warning.dropdown-toggle {
+		background-color: darken(@btnWarningBackgroundHighlight, 15%);
+	}
+	.btn-success.dropdown-toggle {
+		background-color: darken(@btnSuccessBackgroundHighlight, 15%);
+	}
+	.btn-info.dropdown-toggle {
+		background-color: darken(@btnInfoBackgroundHighlight, 15%);
+	}
+	.btn-inverse.dropdown-toggle {
+		background-color: lighten(@btnInverseBackground, 15%);
+	}
+}
+
+// TABLES
+// -----------------------------------------------------
+
+// FORMS
+// -----------------------------------------------------
+
+// DROPDOWNS
+// -----------------------------------------------------
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	background: @dropdownLinkBackgroundHover;
+}
+
+// ALERTS, LABELS, BADGES
+// -----------------------------------------------------
+
+// MISC
+// -----------------------------------------------------
+
+// MEDIA QUERIES
+// -----------------------------------------------------
